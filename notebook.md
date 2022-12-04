@@ -3,28 +3,31 @@ Parsa Ghadermazi
 This is my notebook for RNA_Seq project.
 
 
---------------------- STEP 1 -------------------------
-
-### Downloading the raw reads |  Dec 3
+# STEP1
+------------------------------------------
+## Downloading the raw reads |  Dec 3
 
 I picked the paper titeled "Dong Y, Hu J, Fan L, and Chen Q. (2016) RNA-seq-based transcriptomic and metabolomic analysis reveal stress responses and programmed cell death induced by acetic acid in Saccharomyces cerevisiae. Scientific Reports."
 
 The SRA accession for this project is "SRP075510". First, I made the necessary folder layout:
 
+```
+
 cd /scratch/summit/$USER
 mkdir RNA_Project
 cd RNA_Project 
 
-## Making the directory for the raw_data and scripts
+```
+### Making the directory for the raw_data and scripts
 
 mkdir raw_data
 mkdir scripts
 
-## Downloading the accession files from SRA
+### Downloading the accession files from SRA
 
 https://trace.ncbi.nlm.nih.gov/Traces/study/?acc=SRP075510&o=acc_s%3Aa
 
-# Downloaded the accessions from the link above and moved it to RNA_Project by jupyterhub in a file called accssions.txt
+Downloaded the accessions from the link above and moved it to RNA_Project by jupyterhub in a file called accssions.txt
 
 There are two ways to download the raw reads from SRA. One is the script introduced in class I call it:
 
@@ -162,11 +165,8 @@ INFO:    Using cached SIF image
 I made a simple python code for creating the metadata. I created a repository on github for this project 
 and the jupyter notebook for making the metadata file from SRA's metadata file is provided in the following link:
 
-```
-https://github.com/ParsaGhadermazi/RNA_Seq/blob/main/Metadata.ipynb
-
-```
+[Jupyter notebook for generating the metadata](https://github.com/ParsaGhadermazi/RNA_Seq/blob/main/Metadata.ipynb)
 
 
-
-###### STEP 2 ########################################
+# STEP2
+------------------------------------------
