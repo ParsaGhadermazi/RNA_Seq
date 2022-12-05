@@ -3,13 +3,17 @@ Parsa Ghadermazi
 This is my notebook for RNA_Seq project.
 
 
-# STEP1
+# STEP1 (Building the folder layouts and downloading the genome)
 ------------------------------------------
-## Downloading the raw reads |  Dec 3
+## Downloading the raw reads |  12/3/2022
 
-I picked the paper titeled "Dong Y, Hu J, Fan L, and Chen Q. (2016) RNA-seq-based transcriptomic and metabolomic analysis reveal stress responses and programmed cell death induced by acetic acid in Saccharomyces cerevisiae. Scientific Reports."
+I picked the following paper for my RNA_Seq project
 
-The SRA accession for this project is "SRP075510". First, I made the necessary folder layout:
+|Paper Name|SRA accession|
+|-----|-------------|
+|Dong Y, Hu J, Fan L, and Chen Q. (2016) RNA-seq-based transcriptomic and metabolomic analysis reveal stress responses and programmed cell death induced by acetic acid in Saccharomyces cerevisiae. Scientific Reports."|SRP075510|
+
+First, I made the necessary folder layout:
 
 ```
 
@@ -20,14 +24,17 @@ cd RNA_Project
 ```
 ### Making the directory for the raw_data and scripts
 
+```
 mkdir raw_data
 mkdir scripts
 
+```
+
 ### Downloading the accession files from SRA
 
-https://trace.ncbi.nlm.nih.gov/Traces/study/?acc=SRP075510&o=acc_s%3Aa
+[Link to the SRA project](https://trace.ncbi.nlm.nih.gov/Traces/study/?acc=SRP075510&o=acc_s%3Aa)
 
-Downloaded the accessions from the link above and moved it to RNA_Project by jupyterhub in a file called accssions.txt
+Downloaded the accessions from the link above and moved it to RNA_Project by jupyterhub in a file called accssions.txt to the script directory
 
 There are two ways to download the raw reads from SRA. One is the script introduced in class I call it:
 
@@ -45,11 +52,7 @@ SRA_fetch_sync.sbatch
 #SBATCH --mail-user=tstark@colostate.edu
 #SBATCH --output=log-download-%j.out
  
-# Execute code with: $ sbatch automateSRA.sbatch <file_listing_SRR_files.txt>
- 
-# loop over each SRR file and import each fastq file:
- 
-# Note - $SLURM_NTASKS is an environmental variable set by the #SBATCH line with --ntasks. So it dereferences the number that is specified in that line of code. In this case, it dereferences the number 12. 
+line=accessions.txt
  
 while read line
 do
@@ -157,7 +160,7 @@ INFO:    Using cached SIF image
 
 ```
 
-*** the raw data was downloaded and they were all intact!***
+***The raw data was downloaded and they were all intact!***
 
 
 ### Building the metadata 
@@ -167,6 +170,28 @@ and the jupyter notebook for making the metadata file from SRA's metadata file i
 
 [Jupyter notebook for generating the metadata](https://github.com/ParsaGhadermazi/RNA_Seq/blob/main/Metadata.ipynb)
 
+And here is the link to the metadata text file:
 
-# STEP2
+[Metadata](https://raw.githubusercontent.com/ParsaGhadermazi/RNA_Seq/main/metadata.txt)
+
+# STEP2 (Download and index the genome)
 ------------------------------------------
+## Downloading the genome | 12/4/2022
+
+The second step for this project is to download and index the genome of Saccharomyces cerevisiae.
+
+To do this I make another folder in my scratch space on summit:
+
+```
+cd /scratch/summit/$USER
+mkdir SC_Genome
+cd SC_Genome 
+
+```
+
+Before doing anything I create my path info text file:
+
+```
+touch path.txt
+
+```
