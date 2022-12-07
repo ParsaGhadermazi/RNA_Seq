@@ -195,3 +195,84 @@ Before doing anything I create my path info text file:
 touch path.txt
 
 ```
+
+Then I download the genomes from the following links via rsync or wget:
+
+```
+ rsync -avzP https://hgdownload.soe.ucsc.edu/goldenPath/sacCer3/chromosomes/ .
+
+```
+
+I checked the files by: 
+
+```
+md5sum *.fa.gz  > 120422_sums.txt
+diff md5sum.txt >  120422_sums.txt
+
+```
+
+There was no difference between the two files.
+
+Then I unzip the files by: 
+
+```
+gunzip *.fa.gz
+
+```
+So far, the structure of the genome directory looks like the following: 
+
+```
+/scratch/summit/parsa96@colostate.edu/SC_Genome
+|-- 120422_sums.txt
+|-- BuildSCIndices.sbatch
+|-- chrI.fa
+|-- chrII.fa
+|-- chrIII.fa
+|-- chrIV.fa
+|-- chrIX.fa
+|-- chrM.fa
+|-- chrV.fa
+|-- chrVI.fa
+|-- chrVII.fa
+|-- chrVIII.fa
+|-- chrX.fa
+|-- chrXI.fa
+|-- chrXII.fa
+|-- chrXIII.fa
+|-- chrXIV.fa
+|-- chrXV.fa
+|-- chrXVI.fa
+|-- md5sum.txt
+`-- path.txt
+
+```
+
+Next, I created the slurm script named BuildSCIndices.sbatch:
+
+```
+ls -1 *.fa | sed -z 's/\n/,/g' > chr_list.txt ### To get the list of the genomes
+touch BuildSCIndices.sbatch
+
+```
+#!/usr/bin/env bash
+ 
+#SBATCH --job-name=execute_hisat2-build
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --partition=shas
+#SBATCH --qos=normal    
+#SBATCH --time=4:00:00   
+#SBATCH --output=log_hisat2-build_%J.txt
+ 
+# Build hisat2 indexes for C. elegans
+hisat2-build -p ${SLURM_NTASKS} chrI.fa,chrII.fa,chrIII.fa,chrIV.fa,chrIX.fa,chrM.fa,chrV.fa,chrVI.fa,chrVII.fa,chrVIII.fa,chrX.fa,chrXI.fa,chrXII.fa,chrXIII.fa,chrXIV.fa,chrXV.fa,chrXVI.fa  sc3
+ 
+# Check the build
+echo -e "\n\nINDEX-BUILD: inspecting indexes:"
+hisat2-inspect -s se3
+ 
+# Capture version number
+echo -e "\n\nINDEX-BUILD: version:"
+hisat2-build --version
+
+```

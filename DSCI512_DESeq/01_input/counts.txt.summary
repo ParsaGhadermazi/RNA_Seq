@@ -1,0 +1,15 @@
+Status	../03_output/2022-12-01_output/02_hisat2/EG01.sam	../03_output/2022-12-01_output/02_hisat2/EG02.sam	../03_output/2022-12-01_output/02_hisat2/EG03.sam	../03_output/2022-12-01_output/02_hisat2/EG04.sam	../03_output/2022-12-01_output/02_hisat2/EG05.sam	../03_output/2022-12-01_output/02_hisat2/EG06.sam	../03_output/2022-12-01_output/02_hisat2/EG07.sam	../03_output/2022-12-01_output/02_hisat2/EG08.sam	../03_output/2022-12-01_output/02_hisat2/EG09.sam	../03_output/2022-12-01_output/02_hisat2/EG10.sam	../03_output/2022-12-01_output/02_hisat2/EG11.sam	../03_output/2022-12-01_output/02_hisat2/EG12.sam	../03_output/2022-12-01_output/02_hisat2/EG13.sam	../03_output/2022-12-01_output/02_hisat2/EG14.sam	../03_output/2022-12-01_output/02_hisat2/EG15.sam	../03_output/2022-12-01_output/02_hisat2/EG16.sam	../03_output/2022-12-01_output/02_hisat2/EG17.sam	../03_output/2022-12-01_output/02_hisat2/EG18.sam
+Assigned	5073547	5400682	4689779	4747952	4946964	5096153	4950865	5221586	3993960	4392954	4728436	4128588	3773193	4237716	3904985	4257492	3759994	2679569
+Unassigned_Unmapped	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MultiMapping	366523	406334	395599	355871	379915	286103	363942	352118	306116	248909	257359	237308	273293	284736	267076	332791	290498	211001
+Unassigned_Secondary	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NoFeatures	88384	89549	89806	94689	83281	70721	68578	89701	92471	83045	65799	77156	60705	61402	57769	67436	63818	53341
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Ambiguity	24479	25591	22431	23988	25024	26876	25513	25940	19686	23277	23174	21573	20204	23057	21659	23526	21498	14626
