@@ -1,0 +1,15 @@
+Status	../outputs/_output/02_hisat2/SC01.sam	../outputs/_output/02_hisat2/SC02.sam	../outputs/_output/02_hisat2/SC03.sam	../outputs/_output/02_hisat2/SC04.sam	../outputs/_output/02_hisat2/SC05.sam	../outputs/_output/02_hisat2/SC06.sam	../outputs/_output/02_hisat2/SC07.sam	../outputs/_output/02_hisat2/SC08.sam	../outputs/_output/02_hisat2/SC09.sam	../outputs/_output/02_hisat2/SC010.sam	../outputs/_output/02_hisat2/SC011.sam	../outputs/_output/02_hisat2/SC012.sam
+Assigned	11608915	12444487	9765808	9438080	10962528	9843217	12046159	9911980	14707547	12115945	10368109	13831909
+Unassigned_Unmapped	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MultiMapping	15360389	16520621	19423009	18493685	11205403	14086675	7827275	16487566	21920622	12932599	15274506	7900993
+Unassigned_Secondary	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NoFeatures	303422	314456	188979	180615	253191	219004	219869	176988	267236	252879	181314	241030
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Ambiguity	1419536	1509691	1665271	1523323	1094822	1236843	949410	1569172	2114193	1268457	1403584	997014

@@ -247,13 +247,27 @@ So far, the structure of the genome directory looks like the following:
 
 ```
 
-Next, I created the slurm script named BuildSCIndices.sbatch:
-
+Next, I created the slurm script named BuildSCIndices.sbatch.
+I also make the whole genome by:
 ```
 ls -1 *.fa | sed -z 's/\n/,/g' > chr_list.txt ### To get the list of the genomes
 touch BuildSCIndices.sbatch
 
+cat *.fa > sc3_wholegenome.fa
 ```
+I downloaded the annotation file from :
+
+```
+wget https://hgdownload.soe.ucsc.edu/goldenPath/sacCer3/bigZips/genes/sacCer3.ensGene.gtf.gz
+
+gzip -d 
+```
+
+
+
+
+```
+
 #!/usr/bin/env bash
  
 #SBATCH --job-name=execute_hisat2-build
@@ -274,5 +288,63 @@ hisat2-inspect -s se3
 # Capture version number
 echo -e "\n\nINDEX-BUILD: version:"
 hisat2-build --version
+
+```
+
+Now, I download a .gtf file from 
+
+
+-----------------
+
+## STEP 3: Running the pipeline 2022-12-08
+
+Before running the pipeline I show how my project directory looks like
+
+```
+
+/scratch/summit/parsa96@colostate.edu/RNA_project
+|-- notebook.txt
+|-- outputs
+|-- raw_data
+|   |-- SRR3567551_1.fastq
+|   |-- SRR3567551_2.fastq
+|   |-- SRR3567552_1.fastq
+|   |-- SRR3567552_2.fastq
+|   |-- SRR3567554_1.fastq
+|   |-- SRR3567554_2.fastq
+|   |-- SRR3567555_1.fastq
+|   |-- SRR3567555_2.fastq
+|   |-- SRR3567637_1.fastq
+|   |-- SRR3567637_2.fastq
+|   |-- SRR3567638_1.fastq
+|   |-- SRR3567638_2.fastq
+|   |-- SRR3567639_1.fastq
+|   |-- SRR3567639_2.fastq
+|   |-- SRR3567657_1.fastq
+|   |-- SRR3567657_2.fastq
+|   |-- SRR3567674_1.fastq
+|   |-- SRR3567674_2.fastq
+|   |-- SRR3567676_1.fastq
+|   |-- SRR3567676_2.fastq
+|   |-- SRR3567677_1.fastq
+|   |-- SRR3567677_2.fastq
+|   |-- SRR3567679_1.fastq
+|   |-- SRR3567679_2.fastq
+|   `-- metadata.txt
+`-- scripts
+    |-- Accessions.txt
+    |-- RNAseq_analyzer_221126.sh
+    |-- RNAseq_cleanup_221126.sh
+    |-- SRA_fetch_async.sbatch
+    |-- SRA_fetch_sync.sbatch
+    |-- execute_RNAseq_pipeline.sbatch
+    `-- logfiles
+
+```
+
+Now I go to scripts and run execute RNAseq_pipeline.sbatch
+
+```
+sbatch RNAseq_pipeline.sbatch
 
 ```
