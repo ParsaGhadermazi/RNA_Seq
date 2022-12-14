@@ -476,3 +476,17 @@ Now my directories look like :
 ```
 
 I copied 01_fastp files to my computer for making QC chartes and counts.txt in 03_feature for making the DESeq plots.
+
+----------------------------------
+----------------------------------
+Text file including important paths:
+
+```
+
+hisat2path="/scratch/summit/parsa96@colostate.edu/SC_Genome/sc3"
+
+genomefa="/scratch/summit/parsa96@colostate.edu/SC_Genome/sc3_wholegenome.fa"
+
+gtffile="/scratch/summit/parsa96@colostate.edu/SC_Genome/sacCer3.ensGene.gtf"
+
+```
