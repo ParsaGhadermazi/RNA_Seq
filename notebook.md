@@ -348,3 +348,131 @@ Now I go to scripts and run execute RNAseq_pipeline.sbatch
 sbatch RNAseq_pipeline.sbatch
 
 ```
+The entire job took 03:33:13. This was extracted by :
+
+
+```
+sacct --starttime 2022-12-01 --format JobID,Elapsed|grep 12150281
+
+```
+
+Now my directories look like :
+
+```/scratch/summit/parsa96@colostate.edu/RNA_project
+|-- notebook.txt
+|-- outputs
+|   `-- 2022-12-08_output
+|       |-- 01_fastp
+|       |   |-- SC01
+|       |   |-- SC010
+|       |   |-- SC011
+|       |   |-- SC012
+|       |   |-- SC02
+|       |   |-- SC03
+|       |   |-- SC04
+|       |   |-- SC05
+|       |   |-- SC06
+|       |   |-- SC07
+|       |   |-- SC08
+|       |   `-- SC09
+|       |-- 02_hisat2
+|       |   |-- SC010_summary.txt
+|       |   |-- SC011_summary.txt
+|       |   |-- SC012_summary.txt
+|       |   |-- SC01_summary.txt
+|       |   |-- SC02_summary.txt
+|       |   |-- SC03_summary.txt
+|       |   |-- SC04_summary.txt
+|       |   |-- SC05_summary.txt
+|       |   |-- SC06_summary.txt
+|       |   |-- SC07_summary.txt
+|       |   |-- SC08_summary.txt
+|       |   `-- SC09_summary.txt
+|       |--  
+|       |   |-- counts.txt
+|       |   `-- counts.txt.summary
+|       `-- 04_samtools
+|           |-- SC010_sort.bam
+|           |-- SC010_sort.bam.bai
+|           |-- SC010_sort.bw
+|           |-- SC011_sort.bam
+|           |-- SC011_sort.bam.bai
+|           |-- SC011_sort.bw
+|           |-- SC012_sort.bam
+|           |-- SC012_sort.bam.bai
+|           |-- SC012_sort.bw
+|           |-- SC01_sort.bam
+|           |-- SC01_sort.bam.bai
+|           |-- SC01_sort.bw
+|           |-- SC02_sort.bam
+|           |-- SC02_sort.bam.bai
+|           |-- SC02_sort.bw
+|           |-- SC03_sort.bam
+|           |-- SC03_sort.bam.bai
+|           |-- SC03_sort.bw
+|           |-- SC04_sort.bam
+|           |-- SC04_sort.bam.bai
+|           |-- SC04_sort.bw
+|           |-- SC05_sort.bam
+|           |-- SC05_sort.bam.bai
+|           |-- SC05_sort.bw
+|           |-- SC06_sort.bam
+|           |-- SC06_sort.bam.bai
+|           |-- SC06_sort.bw
+|           |-- SC07_sort.bam
+|           |-- SC07_sort.bam.bai
+|           |-- SC07_sort.bw
+|           |-- SC08_sort.bam
+|           |-- SC08_sort.bam.bai
+|           |-- SC08_sort.bw
+|           |-- SC09_sort.bam
+|           |-- SC09_sort.bam.bai
+|           `-- SC09_sort.bw
+|-- raw_data
+|   |-- SRR3567551_1.fastq
+|   |-- SRR3567551_2.fastq
+|   |-- SRR3567552_1.fastq
+|   |-- SRR3567552_2.fastq
+|   |-- SRR3567554_1.fastq
+|   |-- SRR3567554_2.fastq
+|   |-- SRR3567555_1.fastq
+|   |-- SRR3567555_2.fastq
+|   |-- SRR3567637_1.fastq
+|   |-- SRR3567637_2.fastq
+|   |-- SRR3567638_1.fastq
+|   |-- SRR3567638_2.fastq
+|   |-- SRR3567639_1.fastq
+|   |-- SRR3567639_2.fastq
+|   |-- SRR3567657_1.fastq
+|   |-- SRR3567657_2.fastq
+|   |-- SRR3567674_1.fastq
+|   |-- SRR3567674_2.fastq
+|   |-- SRR3567676_1.fastq
+|   |-- SRR3567676_2.fastq
+|   |-- SRR3567677_1.fastq
+|   |-- SRR3567677_2.fastq
+|   |-- SRR3567679_1.fastq
+|   |-- SRR3567679_2.fastq
+|   `-- metadata.txt
+`-- scripts
+    |-- Accessions.txt
+    |-- RNAseq_analyzer_221126.sh
+    |-- RNAseq_cleanup_221126.sh
+    |-- SRA_fetch_async.sbatch
+    |-- SRA_fetch_sync.sbatch
+    |-- execute_RNAseq_pipeline.sbatch
+    |-- log_RNAseq_pipe_12150267.txt
+    |-- log_RNAseq_pipe_12150281.txt
+    |-- log_RNAseq_pipe_12151805.txt
+    `-- logfiles
+        |-- fasterq.tmp.shas0101.rc.int.colorado.edu.185939
+        |-- log-download-12124629.out
+        |-- log-download-12124679.out
+        |-- log-download-12124699.out
+        `-- log-download-12124743.out
+
+22 directories, 89 files
+
+```
+
+I copied 01_fastp files to my computer for making QC chartes and counts.txt in 03_feature for making the DESeq plots.
